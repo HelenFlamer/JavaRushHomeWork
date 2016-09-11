@@ -112,7 +112,7 @@ public class Solution
     }
 
 
-
+//branch2
     public static enum Type
     {
         ADDED,        //добавлена новая строка
