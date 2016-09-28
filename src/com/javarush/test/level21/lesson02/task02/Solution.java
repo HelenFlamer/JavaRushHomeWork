@@ -18,7 +18,9 @@ public class Solution {
     }
 
     public static boolean isAllModifiersContainSpecificModifier(int allModifiers, int specificModifier) {
-        return false;
+
+        if ((allModifiers & specificModifier) == specificModifier) return true;
+        else return false;
     }
 
     private static Method getMainMethod() {
