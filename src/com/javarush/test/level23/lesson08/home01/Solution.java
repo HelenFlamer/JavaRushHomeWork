@@ -19,25 +19,20 @@ Id=1, name='Location-1', description=Got by executing 'select * from LOCATION'
 5. Проанализируйте пример вывода и сформируйте правильный query для всех классов.
 6. Классы не должны содержать закоментированного кода.
 */
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Solution solution = new Solution();
         print(solution.getUsers());
         print(solution.getLocations());
     }
 
-    public static void print(List list)
-    {
+    public static void print(List list) {
         String format = "Id=%d, name='%s', description=%s";
-        for (Object obj : list)
-        {
+        for (Object obj : list) {
             NamedItem item = (NamedItem) obj;
             System.out.println(String.format(format, item.getId(), item.getName(), item.getDescription()));
         }
     }
-
     public List<Location> getLocations()
     {
         return new AbstractDbSelectExecutor<Location>()
@@ -49,7 +44,6 @@ public class Solution
             }
         }.execute();
     }
-
     public List<Server> getServers()
     {
         return new AbstractDbSelectExecutor<Server>()
@@ -61,7 +55,6 @@ public class Solution
             }
         }.execute();
     }
-
     public List<User> getUsers()
     {
         return new AbstractDbSelectExecutor<User>()
@@ -73,7 +66,6 @@ public class Solution
             }
         }.execute();
     }
-
     public List<Subject> getSubjets()
     {
         return new AbstractDbSelectExecutor<Subject>()
@@ -85,7 +77,6 @@ public class Solution
             }
         }.execute();
     }
-
     public List<Subscription> getSubscriptions()
     {
         return new AbstractDbSelectExecutor<Subscription>()
@@ -97,5 +88,4 @@ public class Solution
             }
         }.execute();
     }
-
 }
